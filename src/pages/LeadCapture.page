@@ -1,0 +1,91 @@
+<apex:page showHeader="false">
+    <apex:slds />
+    <div class="slds-scope">
+        
+    <!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+    
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+        <input type="hidden" name="debug" value="1" />                              -->
+<input type="hidden" name="debugEmail"                                  
+        value="daniel.stange@die-interaktiven.de"/>                              -->
+<!--  ----------------------------------------------------------------------  -->
+<div class="slds-page-header">
+  <div class="slds-media">
+    <div class="slds-media__figure">
+      <span class="slds-icon_container slds-icon-standard-opportunity" title="Find music that matches your writing patterns">
+        <svg class="slds-icon" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+        </svg>
+      </span>
+    </div>
+    <div class="slds-media__body">
+      <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Find music matching your writing patterns">The No.1 Music Recommendation Service</h1>
+      <p class="slds-text-body_small slds-line-height_reset">Find music that matches your writing patterns.</p>
+    </div>
+  </div>
+</div>
+<article class="slds-card">
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+    <input type="hidden" name="oid" value="00D0Y000000ad66"/>
+        <input type="hidden" name="retURL" value="http://dia-dst-ai-developer-edition.eu11.force.com/"/>
+  
+        <div class="slds-card__body slds-card__body_inner">Tell us a bit about yourself and we will prepare a music recommendation for you that will be sent via email.
+            
+    <div class="slds-form slds-form_stacked">
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="first_name">First Name</label>
+  		<div class="slds-form-element__control">
+      		<input type="text" id="first_name" size="30" maxlength="40" name="first_name" class="slds-input" placeholder="Your first name"/>
+  		</div>
+	</div>
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="last_name">Last Name</label>
+  		<div class="slds-form-element__control">
+      		<input type="text" id="last_name" size="30" maxlength="40" name="last_name" class="slds-input" placeholder="Your last name"/>
+  		</div>
+	</div>
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="email">Email</label>
+  		<div class="slds-form-element__control">
+      		<input type="text" id="email" size="30" maxlength="40" name="email" class="slds-input" placeholder="Email Address"/>
+  		</div>
+	</div>
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="company">Company</label>
+  		<div class="slds-form-element__control">
+      		<input type="text" id="company" size="30" maxlength="40" name="company" class="slds-input" placeholder="Company Name"/>
+  		</div>
+	</div>
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="description">Write something that allows us to find maching music</label>
+  		<div class="slds-form-element__control">
+      		<textarea id="description" name="description" class="slds-textarea" placeholder="Some example text"/>
+  		</div>
+	</div>
+    
+</div>
+    <div class="slds-button-group" role="group">
+	    <button class="slds-button slds-button_brand">Send your request and get a music prediction</button>
+    </div>
+            </div>
+    </form>
+    <footer class="slds-card__footer"><a href="SelectPrediction">Back to Overview</a></footer>
+</article>
+
+</div>
+</apex:page>

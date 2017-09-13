@@ -1,0 +1,66 @@
+<apex:page showHeader="false">
+    <apex:slds />
+    <div class="slds-scope">
+<div class="slds-page-header">
+  <div class="slds-media">
+    <div class="slds-media__figure">
+      <span class="slds-icon_container slds-icon-standard-opportunity" title="Get Einstein's opinion on your feedback">
+        <svg class="slds-icon" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+        </svg>
+      </span>
+    </div>
+    <div class="slds-media__body">
+      <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Learn more about your sentiment and intent in your case descriptions">The Einstein enabled Help Desk</h1>
+      <p class="slds-text-body_small slds-line-height_reset">Let's see what Einstein can find out.</p>
+    </div>
+  </div>
+</div>
+<article class="slds-card">
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+        <input type="hidden" name="orgid" value="00D0Y000000ad66"/>
+        <input type="hidden" name="retURL" value="http://dia-dst-ai-developer-edition.eu11.force.com/"/>
+        <input type="hidden" name="debug" value="0" />
+        <input type="hidden" name="debugEmail" value="daniel.stange@die-interaktiven.de"/>                              -->
+        <input type="hidden" name="status" value="New" />
+        <input type="hidden" name="origin" value="Web" />
+
+        <div class="slds-card__body slds-card__body_inner">Tell us a bit about yourself and we will prepare a music recommendation for you that will be sent via email.
+            
+    <div class="slds-form slds-form_stacked">
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="name">Contact Name</label>
+  		<div class="slds-form-element__control">
+      		<input type="text" id="name" size="30" maxlength="40" name="name" class="slds-input" placeholder="Your first name"/>
+  		</div>
+	</div>
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="email">Email</label>
+  		<div class="slds-form-element__control">
+      		<input type="text" id="email" size="30" maxlength="40" name="email" class="slds-input" placeholder="Email Address"/>
+  		</div>
+	</div>
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="subject">Subject</label>
+  		<div class="slds-form-element__control">
+      		<input type="text" id="subject" size="30" maxlength="40" name="subject" class="slds-input" placeholder="Some sample subject"/>
+  		</div>
+	</div>
+    <div class="slds-form-element">
+  		<label class="slds-form-element__label" for="description">Please describe your issue</label>
+  		<div class="slds-form-element__control">
+      		<textarea id="description" name="decription" class="slds-textarea" placeholder="Some example text"/>
+  		</div>
+	</div>
+    
+</div>
+    <div class="slds-button-group" role="group">
+	    <button class="slds-button slds-button_brand">Open a case and let Einstein help you</button>
+    </div>
+            </div>
+    </form>
+    <footer class="slds-card__footer"><a href="SelectPrediction">Back to Overview</a></footer>
+</article>
+
+</div>
+</apex:page>
