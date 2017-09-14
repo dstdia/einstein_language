@@ -16,3 +16,7 @@ https://trailhead.salesforce.com/en/projects/build-a-cat-rescue-app-that-recogni
 * Put the email address you used for signing up to Einstein.ai into the "Einstein Settings" custom setting
 * Store your Einstein certificate into your org's FIles. It *must* be named "Einstein_Platform"
 
+## Sample Data and Slides
+Find my custom intent training data and my slides in /misc
+
+
