@@ -1,42 +1,42 @@
 public class Einstein_Admin {
 
     @AuraEnabled
-    public static void createDatasetFromUrl(String zipUrl, Einstein_PredictionService.Types einsteinType) {
-        Einstein_PredictionService service = new Einstein_PredictionService(einsteinType);
+    public static void createDatasetFromUrl(String zipUrl) {
+        Einstein_PredictionService service = new Einstein_PredictionService(Einstein_PredictionService.Types.INTENT);
         service.createDatasetFromUrlAsync(zipUrl);
     }
     
     @AuraEnabled
-    public static List<Einstein_Dataset> getDatasets(Einstein_PredictionService.Types einsteinType) {
-        Einstein_PredictionService service = new Einstein_PredictionService(einsteinType);
+    public static List<Einstein_Dataset> getDatasets() {
+        Einstein_PredictionService service = new Einstein_PredictionService(Einstein_PredictionService.Types.INTENT);
         Einstein_Dataset[] datasets = service.getDatasets();
         return datasets;
     }
     
     @AuraEnabled
-    public static String trainDataset(Decimal datasetId, Einstein_PredictionService.Types einsteinType) {
-        Einstein_PredictionService service = new Einstein_PredictionService(einsteinType);
+    public static String trainDataset(Decimal datasetId) {
+        Einstein_PredictionService service = new Einstein_PredictionService(Einstein_PredictionService.Types.INTENT);
         Einstein_Model model = service.trainDataset(Long.valueOf(String.valueOf(datasetId)), 'Training', 0, 0, '');
         return model.modelId;
     }
     
     @AuraEnabled
-    public static void deleteDataset(Long datasetId, Einstein_PredictionService.Types einsteinType) {
-        Einstein_PredictionService service = new Einstein_PredictionService(einsteinType);
+    public static void deleteDataset(Long datasetId) {
+        Einstein_PredictionService service = new Einstein_PredictionService(Einstein_PredictionService.Types.INTENT);
         service.deleteDataset(datasetId);
     }
     
     @AuraEnabled
-    public static List<Einstein_Model> getModels(Long datasetId, Einstein_PredictionService.Types einsteinType) {
-        Einstein_PredictionService service = new Einstein_PredictionService(einsteinType);
+    public static List<Einstein_Model> getModels(Long datasetId) {
+        Einstein_PredictionService service = new Einstein_PredictionService(Einstein_PredictionService.Types.INTENT);
         Einstein_Model[] models = service.getModels(datasetId);
         return models;
     }
     
     @AuraEnabled
-    public static void getCatPrediction(Id catId, String fileName, String base64, Einstein_PredictionService.Types einsteinType) {
+    public static void getCatPrediction(Id catId, String fileName, String base64) {
         Blob fileBlob = EncodingUtil.base64Decode(base64);
-        Einstein_PredictionService service = new Einstein_PredictionService(einsteinType);
+        Einstein_PredictionService service = new Einstein_PredictionService(Einstein_PredictionService.Types.INTENT);
         Einstein_Dataset[] datasets = service.getDatasets();
         for (Einstein_Dataset dataset : datasets) {
             if (dataset.Name.equals('Cats')) {
@@ -61,8 +61,8 @@ public class Einstein_Admin {
     }
     
     @AuraEnabled
-    public static List<Einstein_Label> getCatLabels(Einstein_PredictionService.Types einsteinType) {
-        Einstein_PredictionService service = new Einstein_PredictionService(einsteinType);
+    public static List<Einstein_Label> getCatLabels() {
+        Einstein_PredictionService service = new Einstein_PredictionService(Einstein_PredictionService.Types.INTENT);
         Einstein_Dataset[] datasets = service.getDatasets();
         for (Einstein_Dataset dataset : datasets) {
             if (dataset.Name.equals('Cats')) {
