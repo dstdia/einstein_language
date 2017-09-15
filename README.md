@@ -9,10 +9,9 @@ I am going to discuss use cases for Einstein Language Intent and Sentiment and d
 Build the cat rescue app to learn how the Einstein Platform works.
 https://trailhead.salesforce.com/en/projects/build-a-cat-rescue-app-that-recognizes-cat-breeds
 ## Prerequisites
-* You need a Dev Org or a Salesforce DX Dev Hub to build 
-* Clone and deploy René Winkelmeyer's Apex Wrappers for the Einstein Platform APIs
+* No use to build my sample code - there's something better:
+* Clone and deploy René Winkelmeyer's Apex Wrappers for the Einstein Platform APIs: https://github.com/muenzpraeger/salesforce-einstein-platform-apex
 * Sign up for a Einstein.ai account
-* Clone and deploy this repo and push to your Dev or Scratch org.
 * Put the email address you used for signing up to Einstein.ai into the "Einstein Settings" custom setting
 * Store your Einstein certificate into your org's FIles. It *must* be named "Einstein_Platform"
 
